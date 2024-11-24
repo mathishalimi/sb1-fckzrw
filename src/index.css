@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default Theme */
+  --primary: #FF4B6E;
+  --secondary: #6E44FF;
+  --background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+/* Mode-specific themes */
+[data-theme='classic'] {
+  --primary: #FF4B6E;
+  --secondary: #6E44FF;
+  --background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+[data-theme='naughty'] {
+  --primary: #FF2E6E;
+  --secondary: #FF497C;
+  --background: linear-gradient(135deg, #2B0413 0%, #4A0721 100%);
+}
+
+[data-theme='silly'] {
+  --primary: #FFB347;
+  --secondary: #FF8C42;
+  --background: linear-gradient(135deg, #2E1760 0%, #432C7A 100%);
+}
+
+[data-theme='riddles'] {
+  --primary: #4FACFE;
+  --secondary: #00F2FE;
+  --background: linear-gradient(135deg, #000C40 0%, #001F6D 100%);
+}
+
+[data-theme='trivia'] {
+  --primary: #45B649;
+  --secondary: #96E6A1;
+  --background: linear-gradient(135deg, #093028 0%, #1D594E 100%);
+}
+
+[data-theme='duel'] {
+  --primary: #FF3CAC;
+  --secondary: #784BA0;
+  --background: linear-gradient(135deg, #2B2C49 0%, #3C3B6E 100%);
+}
+
+@layer base {
+  body {
+    margin: 0;
+    background: var(--background);
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    color: white;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-[10px] border border-white/20;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  }
+
+  .mode-card {
+    @apply transition-all duration-300 transform;
+  }
+
+  .mode-card:hover {
+    @apply -translate-y-1;
+  }
+}
+
+@layer utilities {
+  .logo-animate {
+    animation: logoGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes logoGlow {
+    0%, 100% {
+      filter: drop-shadow(0 0 8px rgba(255, 75, 110, 0.5));
+    }
+    50% {
+      filter: drop-shadow(0 0 12px rgba(110, 68, 255, 0.5));
+    }
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}

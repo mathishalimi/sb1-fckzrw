@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="100" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF4B6E"/>
+      <stop offset="100%" style="stop-color:#6E44FF"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Main text -->
+  <text x="50%" y="65%" 
+        text-anchor="middle" 
+        font-family="Arial Black, sans-serif" 
+        font-size="72" 
+        font-weight="900" 
+        letter-spacing="4"
+        fill="url(#textGradient)"
+        filter="url(#glow)"
+        style="text-transform: uppercase;">
+    HEDONIA
+  </text>
+</svg>
